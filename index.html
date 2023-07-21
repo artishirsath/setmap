@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map & Set</title>
+    <style>
+        h1{
+            text-align: center;
+            color: orange;
+        }
+        body{
+            background-image: repeating-linear-gradient(black,red,black,red);
+        }
+        pre{
+            color: rgb(50, 18, 230);
+            font-size: 20px;
+            border: 3px solid white;
+            border-radius: 10px;
+            font-weight: bolder;
+            width: fit-content;
+        }
+        p{
+            color: chocolate;
+            font-size: 20px;
+        }
+        li{
+            color: chocolate;
+            font-size: 20px;  
+            list-style: none;
+        }
+        h3{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Set And Map</h1>
+    <h3>Problem:1</h3>
+    <p>You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+    Your task is to remove all the duplicate occurrences of characters in the string.</p><br>
+    <p>Input:
+    abcadeecfb</p>
+
+    <pre>
+        let s="abcadeecfb";
+        let set = new Set();
+        for(let i=0; i < s.length; i++){
+            set.add(s[i]);
+
+        }
+        let res ="";
+        for(let ch of set){
+            res = res+ch;
+        }
+        console.log(res);
+
+    </pre>
+
+    <p>Output:
+    abcdef</p>
+
+
+    <h3>Problem:2</h3>
+     <p>You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)</p><br>
+
+        <p>Input:
+        abcadeecfb</p>
+
+        <pre>
+            let str = "abcadeecfb"
+            let map = new Map();
+            for(let i=0; i< str.length;i++){
+                if(map.has(str[i])){
+                    let value = map.get(str[i]);
+                    map.set(str[i],value+1);
+                }
+                else{
+                    map.set(str[i],1)
+                }
+            }
+            for(let[k,v] of map){
+                console.log(k+"="+v)
+            }
+        </pre>
+
+        <p>Output:</p>
+       <li>a=2</li> 
+        <li>b=2</li>
+        <li>c=2</li>
+        <li>d=1</li>
+        <li>e=2</li>
+        <li>f=1</li>
+    <script src="./script.js"></script>
+</body>
+</html>
